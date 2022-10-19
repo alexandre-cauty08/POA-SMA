@@ -30,10 +30,27 @@ let matrice = [
 var tableau = new Tableau(matrice)
 var agent = new Agent(0, 0, tableau)
 
+/*
+  Fonction play qui permet au joueur d'aller directement au point d'arrivée 
+  Utilisation : An implementation of the A* Search Algorithm in JavaScript
+*/
+function play()
+{
+  var graph = new Graph(matrice);
+  var start = graph.grid[agent.x][agent.y];
+  var end = graph.grid[10][10];
+
+  var result = astar.search(graph, start, end);
+  console.log(result)
+  for(let i = 0; i < result.length; i++)
+  {
+    console.log(result[i].x - agent.x, result[i].y - agent.y)
+    agent.bouger(result[i].x - agent.x, result[i].y - agent.y)
+
+  }
+}
 
 
-//var tableau = new Tableau(matrice)
-//var agent = new Agent(3,7,tableau)*/
 /*
     Utilisation du clavier pour faire bouger le perso
 */
@@ -70,7 +87,6 @@ function clavier(touche)
 }
 
 document.addEventListener('keydown', (event) => {
-  //console.log("clic")
   const touche = event.key;
   clavier(touche)
 })
