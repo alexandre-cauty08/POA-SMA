@@ -20,8 +20,11 @@ class Agent
     */
     bouger(x,y)
     {
+        /*
         this.tableau.matrice[this.x][this.y] = 0
-        if(this.tableau.matrice[this.x+x][this.y+y] == 0)
+        if(this.tableau.matrice[this.x+x][this.y+y] == 0)*/
+        this.tableau.matrice[this.x][this.y] = 1
+        if(this.tableau.matrice[this.x+x][this.y+y] == 1 || this.tableau.matrice[this.x+x][this.y+y] == 3)
         {
               this.x += x
               this.y += y
