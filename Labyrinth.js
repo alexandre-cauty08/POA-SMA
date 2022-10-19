@@ -24,9 +24,10 @@ let matrice = [
     ]
 
 // Positionnement du joueur de départ
-let joueur = [3,7];
-bouger(0,0)
-ModifTerrain(matrice, 20,20)
+//var board = new Tableau(matrice)
+
+var tableau = new Tableau(matrice)
+var agent = new Agent(3,7,tableau)
 
 /* Cette fonction change/modifie le terrain 
 
@@ -34,7 +35,7 @@ Elle prend en paramètre un terrain (matrice)
 Longeur et largeur de la matrice
 
 */
-
+/*
 function ModifTerrain(matrice,x,y) 
 {
   // Variable balise HTML  
@@ -73,10 +74,11 @@ function ModifTerrain(matrice,x,y)
   }
 }
 
-
+*/
 /* 
     Cette fonction permet au joueur de bouger   
 */
+/*
 function bouger(x,y)
 {
   matrice[joueur[0]][joueur[1]] = 0
@@ -89,7 +91,7 @@ function bouger(x,y)
   ModifTerrain(matrice, 20,20)
   console.log(joueur[0] + "," + joueur[0])
 }
-
+*/
 /*
     Utilisation du clavier pour faire bouger le perso
 */
@@ -102,22 +104,22 @@ function clavier(touche)
   */
   if (touche === 'z' || touche === 'ArrowUp') 
   {
-    bouger(-1,0)
+    agent.bouger(-1,0)
   }
 
   if (touche === 's' || touche === 'ArrowDown') 
   {
-    bouger(1,0)
+    agent.bouger(1,0)
   }
 
   if (touche === 'q' || touche === 'ArrowLeft') 
   {
-    bouger(0,-1)
+    agent.bouger(0,-1)
   }
 
   if (touche === 'd' || touche === 'ArrowRight') 
   {
-    bouger(0, 1)
+    agent.bouger(0, 1)
   }
 }
 
