@@ -16,7 +16,7 @@ class Tableau {
 /*
     Fonction qui met a jour le tableau
 */
-    ModifTerrain(matrice) 
+    ModifTerrain() 
     {
     // Variable balise HTML  
     var canvas = document.getElementById('game');
@@ -26,12 +26,29 @@ class Tableau {
             
             var ctx = canvas.getContext('2d');
             ctx.clearRect(0, 0, 501, 501);
-
+            
             // Boucle pour remplissage de la matrice
             for (var i = 0; i < this.x; i++) 
             {
                 for (var j = 0; j < this.y; j++) 
                 {
+                    switch (this.matrice[i][j])
+                    {
+                        case 0:
+                            ctx.fillStyle = "black";
+                        break;
+                        case 1:
+                            ctx.fillStyle = "white"; 
+                        break;
+                        case 2:
+                            ctx.fillStyle = "blue";      
+                        break;
+                        case 3:
+                            ctx.fillStyle = "yellow";      
+                        break;
+            }
+                    ctx.fillRect(25*j+1, 25*i+1, 24, 24);
+                    /*
                     // Condition si = 0 alors blanc pour représenter le terrain libre
                     // c'était 0 avant
                     if(matrice[i][j] == 1)
@@ -56,7 +73,7 @@ class Tableau {
                     {
                         ctx.fillStyle = "yellow";
                         ctx.fillRect(25*j+1, 25*i+1, 24, 24);
-                    }
+                    }*/
                 }
             }
         }

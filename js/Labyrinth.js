@@ -50,7 +50,6 @@ function play()
   }
 }
 
-
 /*
     Utilisation du clavier pour faire bouger le perso
 */

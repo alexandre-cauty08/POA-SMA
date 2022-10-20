@@ -32,5 +32,6 @@ class Agent
             this.tableau.matrice[this.x][this.y] = 2
             this.tableau.ModifTerrain(this.tableau.matrice)
             console.log(this.x + "," + this.y)
+            return
     }
 }
