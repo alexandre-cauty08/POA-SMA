@@ -1,4 +1,6 @@
-#gradient {
+
+#gradient 
+{
     z-index: -1;
     position: fixed;
     top: 0;
@@ -11,7 +13,8 @@
     animation: Gradient 15s ease infinite;
 }
 
-@keyframes Gradient {
+@keyframes Gradient 
+{
     0% {
         background-position: 0% 50%
     }
@@ -24,14 +27,17 @@
 }
 
  /* Extra small devices (phones, 600px and down) */
- @media only screen and (max-width: 400px) {
-     input, select{
+ @media only screen and (max-width: 400px) 
+ {
+     input, select
+     {
          width: 120px;
      }
  }
 
 html,
-body {
+body 
+{
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -43,12 +49,29 @@ body {
     right: 0;
 }
 
-#game {
+#game 
+{
     display: grid;
       grid-template-columns: 10vh 10vh 10vh 10vh;
-  }
-  
-  .carreau {
+}
+.carreau 
+  {
     height: 10vh;
     border:solid 0.5px black;
+    background-size: cover;
   }
+  .joueur
+  {
+    background-image: url("./joueur.png");
+  }
+  
+  .gojo
+   {
+        background-image: url("./gojo.jpg");
+    }
+    .tresor
+    {
+        background-image: url("./tresor.png");
+    }
+
+  

@@ -28,6 +28,7 @@ class Agent
         this.tableau.matrice[this.x][this.y] = 1;
         let nx = this.x+x;
         let ny = this.y+y;
+        let mouvement;
         
         if(nx < 0 || nx >= this.tableau.x || ny < 0 || ny >= this.tableau.y) {
           return;
@@ -36,6 +37,11 @@ class Agent
         {
               this.x += x
               this.y += y
+        }
+        if(this.tableau.matrice[nx][ny] == TRESOR) 
+        {
+            alert("Tu as gagné");
+            nouvelle_map();
         }
             this.tableau.matrice[this.x][this.y] = 2;
             this.tableau.ModifTerrain(this.tableau.matrice);
