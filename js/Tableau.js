@@ -1,3 +1,8 @@
+MURS = 0
+CASES = 1
+JOUEUR = 2 
+TRESOR = 3
+
 /*
     Création de la classe Tableau
 */
@@ -18,7 +23,7 @@ class Tableau {
 */
     ModifTerrain() 
     {
-
+        
         var jeu = document.getElementById('game');
 		jeu.innerHTML = "";
 
@@ -47,16 +52,16 @@ class Tableau {
 
 				switch(carreau) 
                 {
-					case 0:
+					case MURS:
 						divcarreau.style.backgroundColor = "black";
 						break;
-					case 1:
+					case CASES:
 						divcarreau.style.backgroundColor = "white";
 						break;
-					case 2:
+					case JOUEUR:
 						divcarreau.style.backgroundColor = "blue";
 						break;
-					case 3:
+					case TRESOR:
 						divcarreau.style.backgroundColor = "yellow";
 						break;
 					default:
