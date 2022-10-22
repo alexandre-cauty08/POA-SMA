@@ -158,6 +158,7 @@ function clavier(touche)
   if (touche === 'd' || touche === 'ArrowRight') 
   {
     agent.bouger(0, 1)
+    //compteur = compteur + 1
   }
   if( touche === 'p')
   {
