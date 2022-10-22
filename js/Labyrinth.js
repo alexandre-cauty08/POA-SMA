@@ -34,18 +34,21 @@ var agent = new Agent(0, 0, tableau)
   Fonction play qui permet au joueur d'aller directement au point d'arrivée 
   Utilisation : An implementation of the A* Search Algorithm in JavaScript
 */
-function play()
+async function play()
 {
   var graph = new Graph(matrice);
-  var start = graph.grid[agent.x][agent.y];
-  var end = graph.grid[10][10];
+  var debut = graph.grid[agent.x][agent.y];
+  var fin = graph.grid[10][10];
 
-  var result = astar.search(graph, start, end);
+  const timeur = ms => new Promise(res => setTimeout(res, ms))
+
+  var result = astar.search(graph, debut, fin);
   console.log(result)
   for(let i = 0; i < result.length; i++)
   {
     console.log(result[i].x - agent.x, result[i].y - agent.y)
     agent.bouger(result[i].x - agent.x, result[i].y - agent.y)
+    await timeur(69);
 
   }
 }
