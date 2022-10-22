@@ -16,6 +16,13 @@ Action :
 Pour le lancer : 
 * Lancer la page game sur un naviguateur web 
 
+Pour se déplacer :
+* z --> vers le haut
+* q --> vers la gauche
+* s --> vers la bas
+* d --> vers la droite
+* p -->l'agent rejoint seul le trésor grâce astra.js
+* n --> génération de la nouvelle map
 
 A* --> Appris en IA Symbolique
 
