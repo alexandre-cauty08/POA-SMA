@@ -18,6 +18,53 @@ class Tableau {
 */
     ModifTerrain() 
     {
+
+        var jeu = document.getElementById('game');
+		jeu.innerHTML = "";
+
+		let largeur = matrice[0].length;
+		console.log("largeur" + largeur);
+		
+        let vh = Math.round((75/largeur)*100)/100;
+		console.log("vh" + vh);
+		let colonnes = "";
+
+		for(let i = 0; i<largeur; i++) 
+        {
+			colonnes += vh+"vh ";
+		}
+
+		jeu.style.gridTemplateColumns += colonnes;
+		
+        for(let ligne of matrice) 
+        {
+			for(let carreau of ligne) 
+            {
+				let divcarreau = document.createElement("div");
+				jeu.appendChild(divcarreau);
+				divcarreau.classList.add("carreau");
+				divcarreau.style.height = vh+"vh";
+
+				switch(carreau) 
+                {
+					case 0:
+						divcarreau.style.backgroundColor = "black";
+						break;
+					case 1:
+						divcarreau.style.backgroundColor = "white";
+						break;
+					case 2:
+						divcarreau.style.backgroundColor = "blue";
+						break;
+					case 3:
+						divcarreau.style.backgroundColor = "yellow";
+						break;
+					default:
+						break;
+				}
+			}
+        }
+/*
     // Variable balise HTML  
     var canvas = document.getElementById('game');
         // Condition context
@@ -48,6 +95,7 @@ class Tableau {
                         break;
             }
                     ctx.fillRect(25*j+1, 25*i+1, 24, 24);
+*/
                     /*
                     // Condition si = 0 alors blanc pour représenter le terrain libre
                     // c'était 0 avant
@@ -74,8 +122,8 @@ class Tableau {
                         ctx.fillStyle = "yellow";
                         ctx.fillRect(25*j+1, 25*i+1, 24, 24);
                     }*/
-                }
+              /*  }
             }
-        }
+        }*/
     }
 }

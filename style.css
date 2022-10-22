@@ -42,3 +42,13 @@ body {
     left: 0;
     right: 0;
 }
+
+#game {
+    display: grid;
+      grid-template-columns: 10vh 10vh 10vh 10vh;
+  }
+  
+  .carreau {
+    height: 10vh;
+    border:solid 0.5px black;
+  }
