@@ -40,13 +40,15 @@ async function play()
   var graph = new Graph(matrice);
   var debut = graph.grid[agent.x][agent.y];
   var fin = graph.grid[position_tresor.tresorX][position_tresor.tresorY];
-
+  var compteur = 0;
   const timeur = ms => new Promise(res => setTimeout(res, ms))
 
   var result = astar.search(graph, debut, fin);
   console.log(result)
   for(let i = 0; i < result.length; i++)
   {
+    compteur = compteur+1
+    console.log(compteur)
     console.log(result[i].x - agent.x, result[i].y - agent.y)
     agent.bouger(result[i].x - agent.x, result[i].y - agent.y)
     await timeur(69);

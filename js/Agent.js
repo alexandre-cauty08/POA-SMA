@@ -28,15 +28,17 @@ class Agent
         this.tableau.matrice[this.x][this.y] = 1;
         let nx = this.x+x;
         let ny = this.y+y;
-        let mouvement;
+        var compteur = 0;
         
-        if(nx < 0 || nx >= this.tableau.x || ny < 0 || ny >= this.tableau.y) {
+        if(nx < 0 || nx >= this.tableau.x || ny < 0 || ny >= this.tableau.y) 
+        {
           return;
         }
         if(this.tableau.matrice[this.x+x][this.y+y] == 1 || this.tableau.matrice[this.x+x][this.y+y] == 3)
         {
               this.x += x
               this.y += y
+              //compteur = compteur + 1 
         }
         if(this.tableau.matrice[nx][ny] == TRESOR) 
         {
@@ -45,6 +47,7 @@ class Agent
         }
             this.tableau.matrice[this.x][this.y] = 2;
             this.tableau.ModifTerrain(this.tableau.matrice);
+            console.log(compteur);
             console.log(this.x + "," + this.y);
             return;
     }
