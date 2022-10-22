@@ -39,7 +39,7 @@ async function play()
 {
   var graph = new Graph(matrice);
   var debut = graph.grid[agent.x][agent.y];
-  var fin = graph.grid[flagPosition.tresorX][flagPosition.tresorY];
+  var fin = graph.grid[position_tresor.tresorX][position_tresor.tresorY];
 
   const timeur = ms => new Promise(res => setTimeout(res, ms))
 
@@ -121,11 +121,11 @@ function GenerationMapAleatoire(matrice, agent)
 }
 
 
-let flagPosition = GenerationMapAleatoire(matrice, agent)
+let position_tresor = GenerationMapAleatoire(matrice, agent)
 
 function nouvelle_map()
 {
-  flagPosition = GenerationMapAleatoire(matrice, agent)
+  position_tresor = GenerationMapAleatoire(matrice, agent)
 }
 
 /*
