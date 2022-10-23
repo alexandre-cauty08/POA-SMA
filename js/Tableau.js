@@ -56,14 +56,14 @@ class Tableau {
 						divcarreau.style.backgroundColor = "black";
 						break;
 					case CASES:
-						divcarreau.style.backgroundColor = "white";
+						//divcarreau.style.backgroundColor = "white";
 						break;
 					case JOUEUR:
-						divcarreau.style.backgroundColor = "blue";
+						//divcarreau.style.backgroundColor = "blue";
 						divcarreau.classList.add("joueur");
                         break;
 					case TRESOR:
-						divcarreau.style.backgroundColor = "yellow";
+						//divcarreau.style.backgroundColor = "yellow";
                         divcarreau.classList.add("tresor");
 						break;
 					default:
